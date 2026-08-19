@@ -1,14 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4fbf8"/><stop offset="1" stop-color="#f7f5ef"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#102a43" flood-opacity=".12"/></filter></defs>
-<rect width="1200" height="630" fill="url(#bg)"/>
-<circle cx="1050" cy="60" r="210" fill="#b9ead7" opacity=".55"/>
-<circle cx="1120" cy="560" r="150" fill="#fff" opacity=".72"/>
-<g transform="translate(72 62)"><rect width="244" height="46" rx="23" fill="#e8f8f1" stroke="#cfeee2"/><text x="122" y="30" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#102a43">Instagram特典</text></g>
-<text x="72" y="190" font-family="sans-serif" font-size="34" font-weight="700" fill="#547565">50代からの</text>
-<text x="72" y="270" font-family="sans-serif" font-size="68" font-weight="800" fill="#102a43">AI絵本スタートツール</text>
-<text x="72" y="325" font-family="sans-serif" font-size="25" font-weight="600" fill="#425466">絵が描けなくてもOK。AIで最初の1冊を形に。</text>
-<g transform="translate(72 365)" filter="url(#s)"><rect width="520" height="82" rx="20" fill="#102a43"/><text x="260" y="52" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="800" fill="white">テーマ入力 → 指示文を自動作成</text></g>
-<g transform="translate(72 485)"><rect width="170" height="55" rx="16" fill="white" stroke="#dbe4ea"/><text x="85" y="35" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#102a43">無料で使える</text><rect x="185" width="150" height="55" rx="16" fill="white" stroke="#dbe4ea"/><text x="260" y="35" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#102a43">登録不要</text><rect x="350" width="160" height="55" rx="16" fill="white" stroke="#dbe4ea"/><text x="430" y="35" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#102a43">スマホOK</text></g>
-<g transform="translate(725 150)" filter="url(#s)"><rect width="365" height="335" rx="30" fill="white" stroke="#dbe4ea"/><g transform="translate(82 42)"><circle cx="100" cy="82" r="73" fill="#c98b4f"/><circle cx="40" cy="30" r="30" fill="#c98b4f"/><circle cx="160" cy="30" r="30" fill="#c98b4f"/><circle cx="100" cy="90" r="45" fill="#e6b87d"/><circle cx="78" cy="70" r="7" fill="#14213d"/><circle cx="122" cy="70" r="7" fill="#14213d"/><ellipse cx="100" cy="95" rx="12" ry="9" fill="#4d3326"/><path d="M88 111 Q100 122 112 111" fill="none" stroke="#4d3326" stroke-width="5" stroke-linecap="round"/><rect x="24" y="144" width="152" height="105" rx="9" fill="#8ecfb6"/><path d="M100 148 L100 246" stroke="white" stroke-width="5"/><path d="M38 166 Q69 150 96 164 L96 226 Q66 211 38 225 Z" fill="#f7f5ef"/><path d="M104 164 Q135 150 162 166 L162 225 Q132 211 104 226 Z" fill="#f7f5ef"/></g><text x="182" y="292" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#102a43">ChatGPT × 画像生成 × Canva × KDP</text></g>
-<text x="72" y="602" font-family="sans-serif" font-size="18" fill="#667085">Hiro｜50代からのAI在宅ワーク</text>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf4"/><stop offset="1" stop-color="#fff3f0"/></linearGradient>
+  <linearGradient id="book" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#214b8f"/><stop offset="1" stop-color="#173568"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#6f4c4c" flood-opacity=".14"/></filter>
+</defs>
+<rect width="1200" height="630" rx="30" fill="url(#bg)"/>
+<rect x="16" y="16" width="1168" height="598" rx="24" fill="none" stroke="#f6c6c8" stroke-width="4"/>
+
+<!-- decoration -->
+<g fill="#f7c84b"><path d="M70 96 l7 17 18 1-14 11 5 18-16-10-16 10 5-18-14-11 18-1z"/><path d="M560 92 l6 14 15 1-12 9 4 15-13-8-13 8 4-15-12-9 15-1z"/></g>
+<g fill="#f3a0ac"><path d="M1040 118 c-18-18-45 7-18 34 27-27 0-52-18-34 8-21 36-16 36 9 0-25 28-30 36-9-18-18-45 7-18 34-27-27 0-52-18-34z" opacity=".25"/></g>
+
+<!-- Instagram ribbon -->
+<g transform="translate(70 58)">
+  <rect width="318" height="58" rx="20" fill="#ef5d86"/>
+  <circle cx="34" cy="29" r="18" fill="none" stroke="white" stroke-width="4"/>
+  <circle cx="34" cy="29" r="7" fill="none" stroke="white" stroke-width="4"/>
+  <circle cx="47" cy="16" r="3" fill="white"/>
+  <text x="185" y="39" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="800" fill="white">Instagram特典</text>
+</g>
+
+<!-- headline -->
+<text x="70" y="170" font-family="sans-serif" font-size="38" font-weight="800" fill="#5a3a27">50代のあなたの</text>
+<text x="70" y="270" font-family="sans-serif" font-size="94" font-weight="900" fill="#ef718d">AI絵本</text>
+<text x="70" y="344" font-family="sans-serif" font-size="58" font-weight="900" fill="#4b2f22">スタートツール</text>
+<rect x="70" y="380" width="500" height="54" rx="27" fill="#fff0bf"/>
+<text x="320" y="415" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="800" fill="#5b4728">AIで、かわいい絵本づくりを応援</text>
+
+<!-- badges -->
+<g transform="translate(70 470)">
+  <g><rect width="145" height="74" rx="22" fill="#fff" stroke="#f1c8cc" stroke-width="2"/><circle cx="36" cy="37" r="24" fill="#f17b8f"/><text x="36" y="45" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="900" fill="white">¥0</text><text x="96" y="44" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#db526d">無料</text></g>
+  <g transform="translate(160 0)"><rect width="145" height="74" rx="22" fill="#fff" stroke="#cfe4d3" stroke-width="2"/><circle cx="36" cy="37" r="24" fill="#7abf82"/><circle cx="36" cy="30" r="8" fill="white"/><path d="M24 52 q12-18 24 0" fill="white"/><text x="98" y="44" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#4e9a5a">登録不要</text></g>
+  <g transform="translate(320 0)"><rect width="150" height="74" rx="22" fill="#fff" stroke="#c9dded" stroke-width="2"/><circle cx="36" cy="37" r="24" fill="#67a8dc"/><rect x="28" y="21" width="16" height="29" rx="3" fill="white"/><circle cx="36" cy="46" r="2" fill="#67a8dc"/><text x="103" y="44" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#458bc2">スマホOK</text></g>
+</g>
+
+<!-- upright cute picture book -->
+<g transform="translate(690 110)" filter="url(#shadow)">
+  <rect x="0" y="0" width="300" height="390" rx="18" fill="url(#book)"/>
+  <rect x="18" y="18" width="264" height="354" rx="14" fill="#2b5ca4" stroke="#f0d693" stroke-width="4"/>
+  <circle cx="236" cy="62" r="24" fill="#ffd86a"/>
+  <circle cx="247" cy="52" r="24" fill="#2b5ca4"/>
+  <g fill="#ffd76a"><circle cx="55" cy="52" r="5"/><circle cx="92" cy="76" r="4"/><circle cx="198" cy="88" r="4"/><circle cx="250" cy="120" r="5"/><circle cx="72" cy="132" r="4"/></g>
+  <text x="150" y="112" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="900" fill="#fff7d8">おやすみ</text>
+  <text x="150" y="154" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="900" fill="#ffd7df">ルル</text>
+  <!-- bear on cover -->
+  <g transform="translate(73 180)">
+    <circle cx="77" cy="88" r="62" fill="#c98b52"/>
+    <circle cx="28" cy="46" r="25" fill="#c98b52"/><circle cx="126" cy="46" r="25" fill="#c98b52"/>
+    <circle cx="77" cy="97" r="35" fill="#e7b77c"/>
+    <circle cx="61" cy="79" r="5" fill="#3b2b23"/><circle cx="93" cy="79" r="5" fill="#3b2b23"/>
+    <ellipse cx="77" cy="97" rx="9" ry="7" fill="#3b2b23"/>
+    <path d="M67 108 Q77 118 87 108" fill="none" stroke="#3b2b23" stroke-width="4" stroke-linecap="round"/>
+    <path d="M31 44 Q77 2 123 44 L112 22 Q77 -5 42 22 Z" fill="#84a9e1"/>
+    <circle cx="77" cy="8" r="8" fill="white"/><circle cx="48" cy="25" r="5" fill="white"/><circle cx="102" cy="25" r="5" fill="white"/>
+  </g>
+  <rect x="0" y="0" width="10" height="390" rx="5" fill="#f4dfab"/>
+  <path d="M300 18 l14 10 v350 l-14 12z" fill="#f3e2b5"/>
+</g>
+
+<!-- bear beside book -->
+<g transform="translate(1000 300)">
+  <circle cx="88" cy="90" r="72" fill="#c98b52"/>
+  <circle cx="30" cy="34" r="30" fill="#c98b52"/><circle cx="146" cy="34" r="30" fill="#c98b52"/>
+  <circle cx="88" cy="102" r="42" fill="#e7b77c"/>
+  <circle cx="68" cy="82" r="6" fill="#35261f"/><circle cx="108" cy="82" r="6" fill="#35261f"/>
+  <ellipse cx="88" cy="103" rx="11" ry="8" fill="#35261f"/>
+  <path d="M75 116 Q88 128 101 116" fill="none" stroke="#35261f" stroke-width="5" stroke-linecap="round"/>
+  <rect x="48" y="140" width="80" height="72" rx="14" fill="#7ea7df"/>
+  <rect x="55" y="150" width="66" height="50" rx="8" fill="#f29aaa"/>
+  <path d="M88 150 v50" stroke="white" stroke-width="4"/>
+</g>
+
+<!-- footer -->
+<rect x="660" y="535" width="470" height="58" rx="29" fill="#fff" stroke="#f0c8cc" stroke-width="2"/>
+<text x="895" y="572" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="900" fill="#e85f80">@hiro_aiwork</text>
+<text x="70" y="600" font-family="sans-serif" font-size="18" font-weight="700" fill="#7b665b">絵が描けなくてもOK。AIで最初の1冊を形に。</text>
 </svg>
