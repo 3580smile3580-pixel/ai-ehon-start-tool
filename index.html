@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hiro AI絵本スタートツール｜50代からのAI在宅ワーク</title>
-<meta name="description" content="50代・AI初心者向け。テーマを入力するだけで、絵本構成・画像生成・Canva・KDP出版・SNS発信までの指示文をまとめて作れる実践ツール。" />
+<title>50代からのAI絵本スタートツール｜Hiro</title>
+<meta name="description" content="AI初心者・50代向け。絵本の企画、構成、画像生成、Canva、Amazon KDP出版まで進めるための指示文をまとめて作れる無料ツール。" />
+<meta name="theme-color" content="#f4fbf8" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="50代からのAI絵本スタートツール" />
+<meta property="og:description" content="絵が描けなくてもOK。テーマを入力して、AI絵本づくりを始めるための指示文をまとめて作れます。" />
+<meta property="og:url" content="https://3580smile3580-pixel.github.io/ai-ehon-start-tool/" />
 <style>
 :root{
   --bg:#f7f5ef;
-  --paper:#ffffff;
+  --paper:#fff;
   --ink:#14213d;
   --muted:#667085;
   --navy:#102a43;
@@ -21,21 +26,38 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#f4fbf8 0,#f7f5ef 32%,#f7f5ef 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
+body{margin:0;background:linear-gradient(180deg,#f4fbf8 0,#f7f5ef 34%,#f7f5ef 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.75}
 a{color:inherit}
 .wrap{max-width:1120px;margin:auto;padding:0 20px}
-.hero{padding:72px 0 44px;position:relative;overflow:hidden}
+.hero{padding:64px 0 42px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;background:rgba(185,234,215,.55);top:-210px;right:-100px;filter:blur(2px)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:end;position:relative;z-index:1}
 .badge{display:inline-flex;gap:8px;align-items:center;background:var(--mint2);border:1px solid #cfeee2;color:var(--navy);padding:7px 12px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:.04em}
-h1{font-size:clamp(34px,6vw,66px);line-height:1.1;margin:20px 0 18px;letter-spacing:-.03em}
-.hero p{font-size:clamp(16px,2vw,21px);max-width:760px;color:#425466}
+.insta-badge{display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;color:#547565;font-weight:900;font-size:13px;letter-spacing:.05em}
+h1{font-size:clamp(34px,6vw,66px);line-height:1.1;margin:14px 0 18px;letter-spacing:-.03em}
+.hero p{font-size:clamp(16px,2vw,20px);max-width:760px;color:#425466;margin:0}
 .hero strong{color:var(--navy)}
-.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:end}
-.profile{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px;backdrop-filter:blur(8px)}
-.profile small{color:var(--muted);display:block;margin-bottom:6px}.profile b{font-size:20px}.profile p{font-size:14px;margin:8px 0 0}
-.nav{position:sticky;top:0;z-index:10;background:rgba(247,245,239,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.cta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:14px;padding:13px 20px;font-weight:900;transition:.15s;box-shadow:0 8px 20px rgba(16,42,67,.12)}
+.cta.primary{background:var(--navy);color:#fff}
+.cta.primary:hover{transform:translateY(-1px)}
+.cta.light{background:#fff;border:1px solid var(--line);color:var(--navy);box-shadow:none}
+.mini-points{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.mini-point{background:rgba(255,255,255,.72);border:1px solid #d7e8e1;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800;color:#547565}
+.profile{background:rgba(255,255,255,.90);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px;backdrop-filter:blur(8px)}
+.profile small{color:var(--muted);display:block;margin-bottom:6px}.profile b{font-size:20px}.profile p{font-size:14px;margin:8px 0 0;color:#536273}
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,245,239,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;gap:10px;overflow:auto;padding:11px 0}.nav a{text-decoration:none;white-space:nowrap;background:white;border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700}
 section{padding:52px 0}.section-head{margin-bottom:24px}.kicker{font-size:12px;font-weight:900;color:#547565;letter-spacing:.18em}.section-head h2{font-size:clamp(26px,4vw,42px);margin:4px 0 6px;line-height:1.25}.section-head p{color:var(--muted);margin:0}
+.welcome{padding-top:40px}
+.welcome-box{background:linear-gradient(135deg,#fff 0,#f2fbf7 100%);border:1px solid #d9ebe4;border-radius:26px;padding:26px;box-shadow:var(--shadow)}
+.welcome-box h2{margin:0 0 8px;font-size:clamp(24px,4vw,36px)}
+.welcome-box>p{margin:0;color:#536273}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.quick{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.quick-num{width:34px;height:34px;border-radius:10px;background:var(--mint2);display:grid;place-items:center;font-weight:900;color:var(--navy)}
+.quick h3{margin:10px 0 5px;font-size:17px}.quick p{margin:0;font-size:13px;color:var(--muted)}
+.small-note{margin-top:18px;background:#fff9e9;border:1px solid #efdfaa;border-radius:14px;padding:13px 15px;font-size:13px;color:#5f532f}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
 .builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:start}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{grid-column:1/-1}
@@ -46,24 +68,31 @@ textarea{min-height:92px;resize:vertical}input:focus,select:focus,textarea:focus
 .output-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.tab{border:1px solid var(--line);background:#fff;padding:8px 10px;border-radius:10px;font-weight:800;font-size:12px;cursor:pointer}.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .output{display:none}.output.active{display:block}
 pre{white-space:pre-wrap;word-break:break-word;background:#0f2435;color:#eff8f5;padding:18px;border-radius:16px;max-height:460px;overflow:auto;font-size:13px;line-height:1.7;margin:0}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:900;cursor:pointer}.primary{background:var(--navy);color:white}.secondary{background:var(--mint2);color:var(--navy);border:1px solid #cfeee2}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--navy);color:white}.secondary{background:var(--mint2);color:var(--navy);border:1px solid #cfeee2}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.flow-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;min-height:190px}.num{width:34px;height:34px;border-radius:10px;background:var(--mint2);display:grid;place-items:center;font-weight:900;color:var(--navy)}.flow-card h3{margin:13px 0 6px;font-size:17px}.flow-card p{margin:0;font-size:13px;color:var(--muted)}
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.checklist{list-style:none;padding:0;margin:0}.checklist li{display:flex;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px}.checklist li:last-child{border-bottom:0}.dot{flex:0 0 auto;width:22px;height:22px;border-radius:7px;background:var(--mint2);border:1px solid #cbeadc;display:grid;place-items:center;font-size:12px;font-weight:900}
 .note{background:#fff9e9;border:1px solid #efdfaa;border-radius:16px;padding:16px;font-size:13px;color:#5f532f}.note strong{color:#564616}
 .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.post{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.post small{font-weight:900;color:#547565}.post h3{font-size:17px;margin:8px 0}.post p{font-size:13px;color:var(--muted);margin:0}.post code{font-family:inherit;background:var(--mint2);padding:2px 6px;border-radius:6px;color:#244e3f}
-.footer{padding:42px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer strong{color:var(--navy)}
+.footer{padding:42px 0 88px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer strong{color:var(--navy)}
 .toast{position:fixed;right:18px;bottom:18px;background:#102a43;color:#fff;padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:none}
-@media(max-width:900px){.hero-grid,.builder,.check-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.post-grid{grid-template-columns:1fr 1fr}.profile{max-width:520px}}
-@media(max-width:560px){.wrap{padding:0 14px}.hero{padding-top:46px}.form-grid,.flow,.post-grid{grid-template-columns:1fr}.card{padding:17px}.hero-grid{gap:18px}section{padding:38px 0}}
+.mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;background:var(--navy);color:#fff;text-decoration:none;text-align:center;font-weight:900;padding:13px;border-radius:14px;box-shadow:0 8px 24px rgba(16,42,67,.28)}
+@media(max-width:900px){.hero-grid,.builder,.check-grid{grid-template-columns:1fr}.quick-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.post-grid{grid-template-columns:1fr 1fr}.profile{max-width:520px}}
+@media(max-width:560px){.wrap{padding:0 14px}.hero{padding-top:42px}.form-grid,.flow,.post-grid{grid-template-columns:1fr}.card{padding:17px}.hero-grid{gap:18px}section{padding:38px 0}.mobile-cta{display:block}.footer{padding-bottom:96px}.hero-actions .cta{width:100%}}
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
+      <div class="insta-badge">Instagram特典ページ</div><br>
       <div class="badge">AI初心者向け ・ 絵が描けなくてもOK</div>
       <h1>50代からの<br>AI絵本スタートツール</h1>
-      <p><strong>テーマを決めるところから、Amazon KDPで出版するところまで。</strong><br>PCが得意でなくても、AIに何を頼めばいいか迷わないように、1冊を形にするための指示文をまとめて作れます。</p>
+      <p><strong>テーマを決めるところから、Amazon KDPで出版するところまで。</strong><br>「AIに何を頼めばいいの？」と迷わないように、絵本づくりに必要な指示文をまとめて作れるツールです。</p>
+      <div class="hero-actions">
+        <a class="cta primary" href="#builder">AI絵本スタートツールを使う ↓</a>
+        <a class="cta light" href="#howto">まず使い方を見る</a>
+      </div>
+      <div class="mini-points"><span class="mini-point">無料で使える</span><span class="mini-point">登録不要</span><span class="mini-point">スマホでもOK</span></div>
     </div>
     <div class="profile">
       <small>このツールのコンセプト</small>
@@ -73,9 +102,25 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0f2435;color:#eff8f5;
   </div>
 </header>
 <nav class="nav"><div class="wrap nav-inner">
-  <a href="#builder">① 企画を入力</a><a href="#flow">② 作る流れ</a><a href="#canva">③ Canva</a><a href="#kdp">④ KDP</a><a href="#sns">⑤ SNS発信</a>
+  <a href="#howto">使い方</a><a href="#builder">① 企画を入力</a><a href="#flow">② 作る流れ</a><a href="#canva">③ Canva</a><a href="#kdp">④ KDP</a><a href="#sns">⑤ SNS発信</a>
 </div></nav>
 <main>
+<section class="welcome" id="howto">
+<div class="wrap">
+  <div class="welcome-box">
+    <div class="kicker">HOW TO USE</div>
+    <h2>この特典の使い方は3ステップ</h2>
+    <p>難しい設定はありません。入力 → コピー → ChatGPTに貼り付ける、の順番で進めます。</p>
+    <div class="quick-grid">
+      <div class="quick"><div class="quick-num">1</div><h3>作りたい絵本を入力</h3><p>テーマ・対象年齢・主人公・伝えたいことなどを入力します。例ボタンから始めてもOKです。</p></div>
+      <div class="quick"><div class="quick-num">2</div><h3>指示文をコピー</h3><p>「構成案」「画像生成」「表紙」「販売ページ」の必要な指示文をワンクリックでコピーします。</p></div>
+      <div class="quick"><div class="quick-num">3</div><h3>AIとCanvaで仕上げる</h3><p>ChatGPTや画像生成AIで内容を作り、Canvaで文字入れ。完成したらAmazon KDPへ進みます。</p></div>
+    </div>
+    <div class="small-note"><strong>大切：</strong>このページが自動で絵本を完成させるのではなく、AIに伝えるための「指示文」を作るツールです。生成された内容は必ずご自身で確認・修正してください。</div>
+    <div class="actions"><a class="btn primary" href="#builder">さっそく使ってみる ↓</a></div>
+  </div>
+</div>
+</section>
 <section id="builder">
 <div class="wrap">
   <div class="section-head"><div class="kicker">BOOK IDEA BUILDER</div><h2>まず、作りたい絵本を入力</h2><p>入力内容から、ChatGPTへそのまま貼れる指示文を自動で作ります。</p></div>
@@ -90,21 +135,11 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0f2435;color:#eff8f5;
         <div><label>絵の雰囲気</label><select id="style"><option selected>やさしい水彩・淡いパステル</option><option>色鉛筆・手描き風</option><option>切り絵・ペーパークラフト風</option><option>シンプルなフラット絵本</option></select></div>
         <div><label>画面比率</label><select id="ratio"><option selected>縦向き</option><option>正方形</option><option>横向き</option></select></div>
       </div>
-      <div class="preset-row">
-        <button class="preset" data-preset="sleep">寝かしつけ</button>
-        <button class="preset" data-preset="tidy">お片づけ</button>
-        <button class="preset" data-preset="friend">お友だち</button>
-        <button class="preset" data-preset="confidence">自己肯定感</button>
-      </div>
+      <div class="preset-row"><button class="preset" data-preset="sleep">寝かしつけ</button><button class="preset" data-preset="tidy">お片づけ</button><button class="preset" data-preset="friend">お友だち</button><button class="preset" data-preset="confidence">自己肯定感</button></div>
       <div class="actions"><button class="btn primary" id="generate">指示文を作る</button><button class="btn ghost" id="reset">初期値に戻す</button></div>
     </div>
     <div class="card">
-      <div class="output-tabs">
-        <button class="tab active" data-tab="story">構成案</button>
-        <button class="tab" data-tab="image">画像生成</button>
-        <button class="tab" data-tab="cover">表紙</button>
-        <button class="tab" data-tab="meta">販売ページ</button>
-      </div>
+      <div class="output-tabs"><button class="tab active" data-tab="story">構成案</button><button class="tab" data-tab="image">画像生成</button><button class="tab" data-tab="cover">表紙</button><button class="tab" data-tab="meta">販売ページ</button></div>
       <div class="output active" id="story"><pre id="storyText"></pre><div class="actions"><button class="btn secondary copy" data-target="storyText">コピー</button></div></div>
       <div class="output" id="image"><pre id="imageText"></pre><div class="actions"><button class="btn secondary copy" data-target="imageText">コピー</button></div></div>
       <div class="output" id="cover"><pre id="coverText"></pre><div class="actions"><button class="btn secondary copy" data-target="coverText">コピー</button></div></div>
@@ -129,19 +164,8 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0f2435;color:#eff8f5;
 <div class="wrap">
   <div class="section-head"><div class="kicker">CANVA CHECK</div><h2>Canvaで組むときの確認</h2><p>デザインを凝るより、子どもが読みやすいことを優先します。</p></div>
   <div class="check-grid">
-    <div class="card"><ul class="checklist">
-      <li><span class="dot">1</span><span>最初にKDPで使う判型を決め、そのサイズに合わせてCanvaを作る。</span></li>
-      <li><span class="dot">2</span><span>本文はページ端ギリギリに置かず、安全な余白を確保する。</span></li>
-      <li><span class="dot">3</span><span>小さな子向けは、1ページの文章を短くして文字を大きめにする。</span></li>
-      <li><span class="dot">4</span><span>主人公の服・色・顔・小物を全ページで統一する。</span></li>
-      <li><span class="dot">5</span><span>見開きで重要な顔や文字が中央の綴じ部分に寄りすぎないようにする。</span></li>
-      <li><span class="dot">6</span><span>完成後はPDFを書き出す前に、全ページを100%表示で誤字確認する。</span></li>
-    </ul></div>
-    <div class="card">
-      <h3 style="margin-top:0">AIに「統一感」を持たせるコツ</h3>
-      <p style="color:var(--muted);font-size:14px">先に主人公のキャラクター設定表を作り、その特徴を毎ページの指示文へ必ず入れます。服の色、目、耳、髪型、持ち物など「変わってほしくない要素」を固定するとブレが減ります。</p>
-      <div class="note"><strong>ポイント：</strong> 画像に文字を直接生成させず、文章はCanvaで後から入れる方が、日本語の誤字や文字崩れを防ぎやすくなります。</div>
-    </div>
+    <div class="card"><ul class="checklist"><li><span class="dot">1</span><span>最初にKDPで使う判型を決め、そのサイズに合わせてCanvaを作る。</span></li><li><span class="dot">2</span><span>本文はページ端ギリギリに置かず、安全な余白を確保する。</span></li><li><span class="dot">3</span><span>小さな子向けは、1ページの文章を短くして文字を大きめにする。</span></li><li><span class="dot">4</span><span>主人公の服・色・顔・小物を全ページで統一する。</span></li><li><span class="dot">5</span><span>見開きで重要な顔や文字が中央の綴じ部分に寄りすぎないようにする。</span></li><li><span class="dot">6</span><span>完成後はPDFを書き出す前に、全ページを100%表示で誤字確認する。</span></li></ul></div>
+    <div class="card"><h3 style="margin-top:0">AIに「統一感」を持たせるコツ</h3><p style="color:var(--muted);font-size:14px">先に主人公のキャラクター設定表を作り、その特徴を毎ページの指示文へ必ず入れます。服の色、目、耳、髪型、持ち物など「変わってほしくない要素」を固定するとブレが減ります。</p><div class="note"><strong>ポイント：</strong> 画像に文字を直接生成させず、文章はCanvaで後から入れる方が、日本語の誤字や文字崩れを防ぎやすくなります。</div></div>
   </div>
 </div>
 </section>
@@ -149,75 +173,37 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0f2435;color:#eff8f5;
 <div class="wrap">
   <div class="section-head"><div class="kicker">KDP PUBLISH</div><h2>出版前チェック</h2><p>AI作品だからこそ、申告・権利・プレビューを丁寧に確認します。</p></div>
   <div class="check-grid">
-    <div class="card"><ul class="checklist">
-      <li><span class="dot">✓</span><span>AIが実際の文章・画像を生成した場合は、KDP出版時にAI生成コンテンツとして申告する。</span></li>
-      <li><span class="dot">✓</span><span>既存のアニメ・漫画・絵本・ゲームのキャラクター名や、特定作品の模倣指示を使わない。</span></li>
-      <li><span class="dot">✓</span><span>タイトル、著者名、説明文、キーワードなど販売情報を入力する。</span></li>
-      <li><span class="dot">✓</span><span>本文と表紙をアップロードし、KDPのPrint Previewerでエラーと見切れを確認する。</span></li>
-      <li><span class="dot">✓</span><span>印刷費・ロイヤリティは、出版時点のKDP公式計算ツールで確認する。</span></li>
-    </ul></div>
-    <div class="card">
-      <h3 style="margin-top:0">公式ページ</h3>
-      <p style="font-size:14px;color:var(--muted)">ルールは変更されることがあります。出版直前に公式情報を確認してください。</p>
-      <div class="actions">
-        <a class="btn secondary" href="https://kdp.amazon.com/help/topic/G200672390" target="_blank" rel="noopener">AIコンテンツ規定</a>
-        <a class="btn secondary" href="https://kdp.amazon.com/help/topic/G200735480" target="_blank" rel="noopener">KDPツール</a>
-        <a class="btn secondary" href="https://kdp.amazon.com/help/topic/G201834340" target="_blank" rel="noopener">印刷コスト</a>
-      </div>
-      <div class="note" style="margin-top:16px"><strong>このツールでは収益を断定しません。</strong> 印刷費は判型・ページ数・インク・用紙・販売地域で変わるため、最終確認はKDPの公式計算ツールを使います。</div>
-    </div>
+    <div class="card"><ul class="checklist"><li><span class="dot">✓</span><span>AIが実際の文章・画像を生成した場合は、KDP出版時にAI生成コンテンツとして申告する。</span></li><li><span class="dot">✓</span><span>既存のアニメ・漫画・絵本・ゲームのキャラクター名や、特定作品の模倣指示を使わない。</span></li><li><span class="dot">✓</span><span>タイトル、著者名、説明文、キーワードなど販売情報を入力する。</span></li><li><span class="dot">✓</span><span>本文と表紙をアップロードし、KDPのPrint Previewerでエラーと見切れを確認する。</span></li><li><span class="dot">✓</span><span>印刷費・ロイヤリティは、出版時点のKDP公式計算ツールで確認する。</span></li></ul></div>
+    <div class="card"><h3 style="margin-top:0">公式ページ</h3><p style="font-size:14px;color:var(--muted)">ルールは変更されることがあります。出版直前に公式情報を確認してください。</p><div class="actions"><a class="btn secondary" href="https://kdp.amazon.com/help/topic/G200672390" target="_blank" rel="noopener">AIコンテンツ規定</a><a class="btn secondary" href="https://kdp.amazon.com/help/topic/G200735480" target="_blank" rel="noopener">KDPツール</a><a class="btn secondary" href="https://kdp.amazon.com/help/topic/G201834340" target="_blank" rel="noopener">印刷コスト</a></div><div class="note" style="margin-top:16px"><strong>このツールでは収益を断定しません。</strong> 印刷費は判型・ページ数・インク・用紙・販売地域で変わるため、最終確認はKDPの公式計算ツールを使います。</div></div>
   </div>
 </div>
 </section>
 <section id="sns">
 <div class="wrap">
   <div class="section-head"><div class="kicker">AI ACCOUNT CONTENT</div><h2>作る過程そのものを投稿にする</h2><p>AIアカウントでは「完成品」だけでなく、50代の初心者がAIで形にしていく過程がコンテンツになります。</p></div>
-  <div class="post-grid">
-    <div class="post"><small>REEL 01</small><h3>絵が描けない50代がAI絵本に挑戦</h3><p>冒頭は「本当にAmazonに本を出せる？」。企画→AI→完成までを短く見せる。</p></div>
-    <div class="post"><small>REEL 02</small><h3>ChatGPTに物語を作らせた結果</h3><p>入力した3項目と、出てきた構成案を比較。<code>保存CTA</code>と相性が良い。</p></div>
-    <div class="post"><small>REEL 03</small><h3>同じキャラを24ページ出せる？</h3><p>AI画像の「一貫性」をテーマに、失敗→修正→改善を見せる。</p></div>
-    <div class="post"><small>REEL 04</small><h3>Canvaで絵本にしてみた</h3><p>難しい編集ではなく、画像と文章を配置する工程を初心者目線で紹介。</p></div>
-    <div class="post"><small>REEL 05</small><h3>AI絵本をKDPに登録</h3><p>AI生成申告など「知らないと迷う部分」を、公式ルールを確認しながら解説。</p></div>
-    <div class="post"><small>REEL 06</small><h3>Amazonに自分の本が並んだ日</h3><p>売上だけを煽らず、「50代からでも新しい挑戦ができた」を軸にする。</p></div>
-  </div>
+  <div class="post-grid"><div class="post"><small>REEL 01</small><h3>絵が描けない50代がAI絵本に挑戦</h3><p>冒頭は「本当にAmazonに本を出せる？」。企画→AI→完成までを短く見せる。</p></div><div class="post"><small>REEL 02</small><h3>ChatGPTに物語を作らせた結果</h3><p>入力した3項目と、出てきた構成案を比較。<code>保存CTA</code>と相性が良い。</p></div><div class="post"><small>REEL 03</small><h3>同じキャラを24ページ出せる？</h3><p>AI画像の「一貫性」をテーマに、失敗→修正→改善を見せる。</p></div><div class="post"><small>REEL 04</small><h3>Canvaで絵本にしてみた</h3><p>難しい編集ではなく、画像と文章を配置する工程を初心者目線で紹介。</p></div><div class="post"><small>REEL 05</small><h3>AI絵本をKDPに登録</h3><p>AI生成申告など「知らないと迷う部分」を、公式ルールを確認しながら解説。</p></div><div class="post"><small>REEL 06</small><h3>Amazonに自分の本が並んだ日</h3><p>売上だけを煽らず、「50代からでも新しい挑戦ができた」を軸にする。</p></div></div>
 </div>
 </section>
 </main>
-<footer class="footer"><div class="wrap">
-  <strong>Hiro AI絵本スタートツール</strong><br>
-  50代からのAI在宅ワーク実践用。これはAmazon公式ツールではありません。KDPの仕様・料金・規約は変更されるため、出版時は必ずAmazon KDP公式ヘルプで最新情報をご確認ください。
-</div></footer>
+<footer class="footer"><div class="wrap"><strong>Hiro AI絵本スタートツール</strong><br>50代からのAI在宅ワーク実践用。これはAmazon公式ツールではありません。KDPの仕様・料金・規約は変更されるため、出版時は必ずAmazon KDP公式ヘルプで最新情報をご確認ください。</div></footer>
+<a class="mobile-cta" href="#builder">AI絵本ツールを使う ↑</a>
 <div class="toast" id="toast">コピーしました</div>
 <script>
-const $ = (id)=>document.getElementById(id);
+const $=(id)=>document.getElementById(id);
 const defaults={theme:'寝る前の不安をやわらげる',age:'4〜6歳',pages:'24',character:'くまの「ルル」。少し心配性だけれど、やさしくて好奇心がある。丸い耳と小さな青いパジャマが目印。',message:'こわい気持ちがあっても大丈夫。小さな準備をひとつずつすると安心して眠れる。',style:'やさしい水彩・淡いパステル',ratio:'縦向き'};
-const presets={
- sleep:{theme:'寝る前の不安をやわらげる',character:'くまの「ルル」。少し心配性だけれど、やさしくて好奇心がある。丸い耳と小さな青いパジャマが目印。',message:'こわい気持ちがあっても大丈夫。小さな準備をひとつずつすると安心して眠れる。'},
- tidy:{theme:'楽しくお片づけする習慣',character:'こねこの「ミミ」。遊ぶのが大好きで、ついおもちゃを広げすぎる。黄色いリボンが目印。',message:'片づけは怒られるためではなく、次に気持ちよく遊ぶための準備。少しずつならできる。'},
- friend:{theme:'お友だちと気持ちを伝え合う',character:'小さなぞうの「ポポ」。やさしいけれど、言いたいことを飲み込んでしまう。緑の帽子が目印。',message:'自分の気持ちを言葉にしていいこと。相手の気持ちを聞くと仲直りのきっかけが生まれる。'},
- confidence:{theme:'失敗してもまた挑戦できる',character:'子うさぎの「ララ」。新しいことが好きだけれど、一度失敗するとすぐ諦めそうになる。赤い小さなバッグが目印。',message:'できない日があっても、自分の価値は変わらない。昨日より少し進めば十分。'}
-};
+const presets={sleep:{theme:'寝る前の不安をやわらげる',character:'くまの「ルル」。少し心配性だけれど、やさしくて好奇心がある。丸い耳と小さな青いパジャマが目印。',message:'こわい気持ちがあっても大丈夫。小さな準備をひとつずつすると安心して眠れる。'},tidy:{theme:'楽しくお片づけする習慣',character:'こねこの「ミミ」。遊ぶのが大好きで、ついおもちゃを広げすぎる。黄色いリボンが目印。',message:'片づけは怒られるためではなく、次に気持ちよく遊ぶための準備。少しずつならできる。'},friend:{theme:'お友だちと気持ちを伝え合う',character:'小さなぞうの「ポポ」。やさしいけれど、言いたいことを飲み込んでしまう。緑の帽子が目印。',message:'自分の気持ちを言葉にしていいこと。相手の気持ちを聞くと仲直りのきっかけが生まれる。'},confidence:{theme:'失敗してもまた挑戦できる',character:'子うさぎの「ララ」。新しいことが好きだけれど、一度失敗するとすぐ諦めそうになる。赤い小さなバッグが目印。',message:'できない日があっても、自分の価値は変わらない。昨日より少し進めば十分。'}};
 function val(id){return $(id).value.trim()}
-function build(){
- const d={theme:val('theme'),age:val('age'),pages:val('pages'),character:val('character'),message:val('message'),style:val('style'),ratio:val('ratio')};
- localStorage.setItem('hiroEhonTool',JSON.stringify(d));
- $('storyText').textContent=`あなたは、子どもの発達と読み聞かせに配慮できる児童書編集者・絵本構成作家です。\n\n以下の条件から、完全オリジナルの子ども向け絵本の構成案を作ってください。\n\n【テーマ】\n${d.theme}\n\n【対象年齢】\n${d.age}\n\n【主人公】\n${d.character}\n\n【子どもに伝えたいこと】\n${d.message}\n\n【ページ数】\n本文 ${d.pages}ページ（表紙は別）\n\n【作成ルール】\n・1ページごとに「ページ番号／本文／絵の場面」をセットで出す\n・本文は${d.age}の読み聞かせに適した、やさしい日本語にする\n・難しい漢字は避け、必要な場合はひらがなを中心にする\n・1ページの文章を長くしすぎない\n・前半で主人公の悩みや目的を示し、中盤に小さな失敗や変化、後半に気づきと行動を置く\n・説教ではなく、主人公の体験から自然に「${d.message}」が伝わる展開にする\n・怖すぎる描写、暴力、差別的表現は使わない\n・実在するアニメ・漫画・絵本・ゲームのキャラクターや世界観を模倣しない\n・最後に「表紙タイトル案を5案」と「裏表紙に使える短い紹介文を3案」も出す\n\nまず最初に、物語のタイトル候補を5案出してから構成案を作ってください。`;
- $('imageText').textContent=`あなたは、絵本向け画像生成プロンプトの専門家です。\n\nこのあと貼り付ける絵本構成案を、各ページの画像生成指示に変換してください。\n\n【固定する主人公】\n${d.character}\n\n【絵の世界観】\n${d.style}\n\n【画面】\n${d.ratio}。絵本用として余白を確保し、本文をあとからCanvaで配置できる構図。\n\n【重要ルール】\n・最初に「キャラクター設定シート用プロンプト」を1つ作る\n・そのあと本文1ページごとに、1つずつ独立した画像生成プロンプトを作る\n・毎ページに主人公の外見・服・色・小物などの固定特徴を必ず繰り返して書く\n・背景、時間帯、カメラ位置、主人公の表情、手足の動き、周囲の小物まで具体的にする\n・同じ場面の連続にならないよう、引き・寄り・俯瞰など構図に変化をつける\n・画像内に文章、文字、吹き出し、ロゴ、透かしを生成しない\n・実在する作品名、作家名、キャラクター名をスタイル指定に使わない\n・既存作品の模倣ではなく、完全オリジナルの絵本表現にする\n・英語プロンプトの直後に、日本語の意味も併記する\n\n最後に、全ページで一貫性を保つための「共通固定文」を1つ作ってください。`;
- $('coverText').textContent=`あなたは子ども向け絵本の表紙アートディレクターです。\n\nテーマ「${d.theme}」、主人公「${d.character}」の絵本表紙案を3案作ってください。\n\n対象年齢：${d.age}\n伝えたいこと：${d.message}\n画風：${d.style}\n画面：${d.ratio}\n\n各案について、\n1. 表紙の構図\n2. 主人公のポーズと表情\n3. 背景\n4. タイトルを置くための余白位置\n5. 画像生成AIへ貼る英語プロンプト\nを出してください。\n\n画像内には文字を生成せず、タイトルはCanvaで後から入れます。既存作品・既存キャラクターの模倣はしません。`;
- $('metaText').textContent=`あなたはAmazon KDPの児童書販売ページを整える編集者です。\n以下の絵本情報をもとに、誇張せず、親が内容を理解しやすい販売用テキストを作ってください。\n\nテーマ：${d.theme}\n対象年齢：${d.age}\n主人公：${d.character}\n伝えたいこと：${d.message}\n\n【出力】\n・タイトル候補 5案\n・サブタイトル候補 3案\n・Amazon商品説明文 1案（読みやすく改行）\n・検索を意識したキーワード候補 7組\n・著者紹介の短文 1案\n・Instagram投稿で紹介するときの短い告知文 1案\n\n【ルール】\n・「必ず売れる」「絶対に変わる」などの断定・誇大表現を使わない\n・他作品名、他著者名、商標を検索キーワード目的で入れない\n・親が「どんな悩みに寄り添う本か」「どんな時間に読みやすいか」を理解できる文章にする\n・AI生成物を含む場合、KDP登録時のAI生成コンテンツ申告は別途正しく行う前提で作る`;
-}
-function load(){
- let d=defaults;try{const s=JSON.parse(localStorage.getItem('hiroEhonTool'));if(s)d={...defaults,...s}}catch(e){}
- Object.entries(d).forEach(([k,v])=>{if($(k))$(k).value=v});build();
-}
+function build(){const d={theme:val('theme'),age:val('age'),pages:val('pages'),character:val('character'),message:val('message'),style:val('style'),ratio:val('ratio')};localStorage.setItem('hiroEhonTool',JSON.stringify(d));
+$('storyText').textContent=`あなたは、子どもの発達と読み聞かせに配慮できる児童書編集者・絵本構成作家です。\n\n以下の条件から、完全オリジナルの子ども向け絵本の構成案を作ってください。\n\n【テーマ】\n${d.theme}\n\n【対象年齢】\n${d.age}\n\n【主人公】\n${d.character}\n\n【子どもに伝えたいこと】\n${d.message}\n\n【ページ数】\n本文 ${d.pages}ページ（表紙は別）\n\n【作成ルール】\n・1ページごとに「ページ番号／本文／絵の場面」をセットで出す\n・本文は${d.age}の読み聞かせに適した、やさしい日本語にする\n・難しい漢字は避け、必要な場合はひらがなを中心にする\n・1ページの文章を長くしすぎない\n・前半で主人公の悩みや目的を示し、中盤に小さな失敗や変化、後半に気づきと行動を置く\n・説教ではなく、主人公の体験から自然に「${d.message}」が伝わる展開にする\n・怖すぎる描写、暴力、差別的表現は使わない\n・実在するアニメ・漫画・絵本・ゲームのキャラクターや世界観を模倣しない\n・最後に「表紙タイトル案を5案」と「裏表紙に使える短い紹介文を3案」も出す\n\nまず最初に、物語のタイトル候補を5案出してから構成案を作ってください。`;
+$('imageText').textContent=`あなたは、絵本向け画像生成プロンプトの専門家です。\n\nこのあと貼り付ける絵本構成案を、各ページの画像生成指示に変換してください。\n\n【固定する主人公】\n${d.character}\n\n【絵の世界観】\n${d.style}\n\n【画面】\n${d.ratio}。絵本用として余白を確保し、本文をあとからCanvaで配置できる構図。\n\n【重要ルール】\n・最初に「キャラクター設定シート用プロンプト」を1つ作る\n・そのあと本文1ページごとに、1つずつ独立した画像生成プロンプトを作る\n・毎ページに主人公の外見・服・色・小物などの固定特徴を必ず繰り返して書く\n・背景、時間帯、カメラ位置、主人公の表情、手足の動き、周囲の小物まで具体的にする\n・同じ場面の連続にならないよう、引き・寄り・俯瞰など構図に変化をつける\n・画像内に文章、文字、吹き出し、ロゴ、透かしを生成しない\n・実在する作品名、作家名、キャラクター名をスタイル指定に使わない\n・既存作品の模倣ではなく、完全オリジナルの絵本表現にする\n・英語プロンプトの直後に、日本語の意味も併記する\n\n最後に、全ページで一貫性を保つための「共通固定文」を1つ作ってください。`;
+$('coverText').textContent=`あなたは子ども向け絵本の表紙アートディレクターです。\n\nテーマ「${d.theme}」、主人公「${d.character}」の絵本表紙案を3案作ってください。\n\n対象年齢：${d.age}\n伝えたいこと：${d.message}\n画風：${d.style}\n画面：${d.ratio}\n\n各案について、\n1. 表紙の構図\n2. 主人公のポーズと表情\n3. 背景\n4. タイトルを置くための余白位置\n5. 画像生成AIへ貼る英語プロンプト\nを出してください。\n\n画像内には文字を生成せず、タイトルはCanvaで後から入れます。既存作品・既存キャラクターの模倣はしません。`;
+$('metaText').textContent=`あなたはAmazon KDPの児童書販売ページを整える編集者です。\n以下の絵本情報をもとに、誇張せず、親が内容を理解しやすい販売用テキストを作ってください。\n\nテーマ：${d.theme}\n対象年齢：${d.age}\n主人公：${d.character}\n伝えたいこと：${d.message}\n\n【出力】\n・タイトル候補 5案\n・サブタイトル候補 3案\n・Amazon商品説明文 1案（読みやすく改行）\n・検索を意識したキーワード候補 7組\n・著者紹介の短文 1案\n・Instagram投稿で紹介するときの短い告知文 1案\n\n【ルール】\n・「必ず売れる」「絶対に変わる」などの断定・誇大表現を使わない\n・他作品名、他著者名、商標を検索キーワード目的で入れない\n・親が「どんな悩みに寄り添う本か」「どんな時間に読みやすいか」を理解できる文章にする\n・AI生成物を含む場合、KDP登録時のAI生成コンテンツ申告は別途正しく行う前提で作る`;}
+function load(){let d=defaults;try{const s=JSON.parse(localStorage.getItem('hiroEhonTool'));if(s)d={...defaults,...s}}catch(e){}Object.entries(d).forEach(([k,v])=>{if($(k))$(k).value=v});build()}
 function toast(msg='コピーしました'){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500)}
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.output').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.tab).classList.add('active')}));
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const text=$(b.dataset.target).textContent;try{await navigator.clipboard.writeText(text);toast()}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();toast()}}));
 document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',()=>{const p=presets[b.dataset.preset];Object.entries(p).forEach(([k,v])=>$(k).value=v);build();toast('例をセットしました')}));
-$('generate').addEventListener('click',()=>{build();toast('指示文を更新しました')});
-$('reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);build();toast('初期値に戻しました')});
-['theme','age','pages','character','message','style','ratio'].forEach(id=>$(id).addEventListener('input',build));
-load();
+$('generate').addEventListener('click',()=>{build();toast('指示文を更新しました')});$('reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);build();toast('初期値に戻しました')});['theme','age','pages','character','message','style','ratio'].forEach(id=>$(id).addEventListener('input',build));load();
 </script>
 </body>
 </html>
